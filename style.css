@@ -1,44 +1,56 @@
-/* ===== MELHORIA DE LEITURA DO TEXTO ===== */
+/* =========================
+   RESET & BASE
+========================= */
 
-.card p {
-  margin-bottom: 14px;
-  /* espaço entre parágrafos */
-  line-height: 1.6;
-  /* melhora MUITO a leitura */
-}
-
-/* Limita largura do texto para não ficar “esticado” */
-.card {
-  max-width: 800px;
-}
-
-/* Dá um leve destaque no primeiro parágrafo */
-.card p:first-of-type {
-  font-weight: 500;
-}
-
-/* RESET */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* BODY */
 body {
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #f4f6f8;
   color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* CONTAINER */
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* HEADER */
+main.container {
+  flex: 1;
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-top: 30px;
+}
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+
 header {
   text-align: center;
 }
@@ -47,10 +59,8 @@ header nav {
   margin-top: 15px;
 }
 
-/* MENU */
 .menu-link {
   color: #9ca3af;
-  text-decoration: none;
   margin: 0 12px;
   font-weight: bold;
   transition: color 0.3s;
@@ -64,30 +74,36 @@ header nav {
   color: #111827;
 }
 
-/* LINKS */
-a {
-  color: #2563eb;
-  text-decoration: none;
-}
+/* =========================
+   COMPONENTES
+========================= */
 
-a:hover {
-  text-decoration: underline;
-}
-
-/* CARD */
 .card {
   background: #fff;
   border-radius: 8px;
   padding: 20px;
   margin: 20px 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
 }
 
 .card h2 {
   margin-bottom: 12px;
 }
 
-/* SEÇÕES COM ANIMAÇÃO */
+.card p {
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.card p:first-of-type {
+  font-weight: 500;
+}
+
+/* =========================
+   SEÇÕES (JS)
+========================= */
+
 .secao {
   display: none;
   opacity: 0;
@@ -112,7 +128,6 @@ a:hover {
   margin-top: 20px;
 }
 
-/* Card do projeto (balão) */
 .projeto-card {
   background: #f9fafb;
   padding: 32px;
@@ -120,7 +135,6 @@ a:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Nome do projeto + botão */
 .projeto-header h3 {
   display: flex;
   align-items: center;
@@ -128,7 +142,6 @@ a:hover {
   margin-bottom: 8px;
 }
 
-/* Links do projeto */
 .projeto-links {
   margin: 8px 0 14px;
 }
@@ -138,54 +151,39 @@ a:hover {
   font-weight: bold;
 }
 
-/* Botão Ler mais */
+/* Botão Ler Mais */
 .btn-ler-mais {
   background: #2563eb;
-  border: none;
   color: #fff;
-  cursor: pointer;
+  border: none;
   font-size: 13px;
   padding: 4px 10px;
   border-radius: 4px;
-  margin-left: 8px;
+  cursor: pointer;
 }
 
 .btn-ler-mais:hover {
   background: #1e40af;
 }
 
-@media (max-width: 480px) {
-  .projeto-header h3 {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .btn-ler-mais {
-    margin-left: 0;
-    margin-top: 6px;
-  }
-}
-
-
-
-/* Texto expandido */
+/* Descrição com animação */
 .descricao-projeto {
-  display: none;
-  margin-top: 12px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
   line-height: 1.6;
 }
 
-.descricao-projeto p {
-  margin-bottom: 10px;
-  max-width: 700px;
-}
-
 .descricao-projeto.ativa {
-  display: block;
+  max-height: 600px;
+  opacity: 1;
 }
 
+/* =========================
+   CONTATO
+========================= */
 
-/* CONTATO */
 .lista-contato {
   list-style: none;
 }
@@ -194,22 +192,98 @@ a:hover {
   margin-bottom: 10px;
 }
 
-/* FOOTER */
-.footer {
-  text-align: center;
-  font-size: 14px;
-  color: #666;
-  margin-top: 30px;
+/* =========================
+   BOTÃO DE TEMA FIXO
+========================= */
+
+.btn-tema-fixo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: #2563eb;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+  z-index: 1000;
 }
 
-body {
-  background-color: #f4f6f8;
-  color: #333;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.btn-tema-fixo:hover {
+  background-color: #1e40af;
+  transform: scale(1.05);
 }
 
-main.container {
-  flex: 1;
+/* =========================
+   TOAST / ALERTA
+========================= */
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  opacity: 0;
+  transform: translateY(-20px);
+  background: #eef2ff;
+  color: #1e3a8a;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border-left: 4px solid #2563eb;
+  font-size: 13px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.toast.ativo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.saindo {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* =========================
+   TEMA ESCURO
+========================= */
+
+body.dark {
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+body.dark .card,
+body.dark .projeto-card {
+  background-color: #1f2933;
+}
+
+body.dark a {
+  color: #93c5fd;
+}
+
+body.dark .btn-tema-fixo {
+  background-color: #facc15;
+  color: #111827;
+}
+
+body.dark .toast {
+  background: #1e293b;
+  border-color: #60a5fa;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 600px) {
+  .projeto-header h3 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

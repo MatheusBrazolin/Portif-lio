@@ -9,6 +9,15 @@
 </head>
 
 <body>
+
+  <!-- TOAST DE BOAS-VINDAS -->
+  <div id="mensagem" class="toast"></div>
+
+  <!-- BOTÃO DE TEMA -->
+  <button id="toggle-tema" class="btn-tema-fixo" aria-label="Alternar tema">
+    🌙
+  </button>
+
   <header class="container">
     <h1>Matheus Felicio Brazolin</h1>
     <p>Graduado em Análise e Desenvolvimento de Sistemas</p>
@@ -25,21 +34,25 @@
     <!-- SOBRE -->
     <section id="sobre" class="card secao ativa">
       <h2>Sobre mim</h2>
+
       <p>
         Acredito que tecnologia e eficiência operacional devem caminhar juntas para gerar melhores resultados e
         experiências. Sou graduado em Análise e Desenvolvimento de Sistemas pela Universidade Anhembi Morumbi, com
         atuação no setor de seguros, onde aplico raciocínio lógico e organização técnica para otimização de processos.
       </p>
+
       <p>
         Iniciei minha trajetória na Porto Seguro como Jovem Aprendiz e evoluí para o departamento de Sinistro Vida e
         Previdência, atuando como Auxiliar Administrativo e, atualmente, como Analista Júnior. Nesse contexto,
         desenvolvi uma visão analítica voltada à precisão, conformidade e cumprimento de prazos em processos críticos.
       </p>
+
       <p>
         Minha rotina envolve análise técnica e documental, acompanhamento de fluxos sistêmicos e interação com
         diferentes áreas para resolução de pendências. Possuo base sólida em tecnologias como Python, .NET, Java e
         Linguagem R, além de domínio avançado em Excel e Power BI.
       </p>
+
       <p>
         Sou reconhecido pela proatividade, facilidade em trabalhar em equipe e pela capacidade de resolver problemas de
         forma eficiente. Tenho inglês avançado e busco constantemente integrar conhecimentos em dados e sistemas para
@@ -48,13 +61,14 @@
     </section>
 
     <!-- PROJETOS -->
-    <section id="projetos" class="secao card">
+    <section id="projetos" class="card secao">
       <h2>Projetos</h2>
 
       <div class="projetos-grid">
+
+        <!-- PROJETO 1 -->
         <div class="projeto-card">
           <div class="projeto-header">
-             <!-- Projeto 1 -->
             <h3>
               Easy Food
               <button type="button" class="btn-ler-mais">Ler mais</button>
@@ -68,31 +82,23 @@
 
           <div class="descricao-projeto">
             <p><strong>Objetivo:</strong> Projeto full stack alinhado à ODS 2 (Fome Zero e Agricultura Sustentável),
-              criado para aproximar pequenos produtores rurais dos consumidores, incentivando um modelo socialmente
-              sustentável.</p>
+              criado para aproximar pequenos produtores rurais dos consumidores.</p>
 
-            <p><strong>Organização:</strong> Desenvolvido com metodologia ágil, utilizando Trello para gestão de
-              tarefas, Discord e Zoom para comunicação e GitHub para versionamento de código.</p>
+            <p><strong>Organização:</strong> Metodologia ágil com Trello, Discord e GitHub.</p>
 
-            <p><strong>Back-end:</strong> API REST construída com ASP.NET Core e C#, seguindo o padrão MVC, com banco de
-              dados SQL Server, implementação de CRUD, autenticação e autorização via JWT e diferentes níveis de acesso
-              de usuários.</p>
+            <p><strong>Back-end:</strong> API REST em ASP.NET Core (C#), SQL Server, JWT, CRUD e controle de acesso.</p>
 
-            <p><strong>Testes e Deploy:</strong> Testes unitários com MSTest, testes de integração com Postman e deploy
-              da API em ambiente de nuvem.</p>
+            <p><strong>Testes e Deploy:</strong> MSTest, Postman e deploy em nuvem.</p>
 
+            <p><strong>Front-end:</strong> React + TypeScript, Figma, Material UI e Axios.</p>
 
-            <p><strong>Front-end:</strong> Interface desenvolvida em React com TypeScript, prototipada no Figma,
-              estilizada com CSS e Material UI, integrada à API via Axios e publicada na Vercel.</p>
-
-            <p><strong>Funcionalidades:</strong> Cadastro e login, listagem de produtos, carrinho de compras, páginas
-              institucionais e formulário de contato.</p>
+            <p><strong>Funcionalidades:</strong> Login, cadastro, listagem de produtos, carrinho e contato.</p>
           </div>
         </div>
 
+        <!-- PROJETO 2 -->
         <div class="projeto-card">
           <div class="projeto-header">
-             <!-- Projeto 2 -->
             <h3>
               Novo Projeto
               <button type="button" class="btn-ler-mais">Ler mais</button>
@@ -100,38 +106,27 @@
           </div>
 
           <div class="projeto-links">
-            <a href="https://easyfood-one.vercel.app/" target="_blank">🔗 Demo</a>
-            <a href="https://github.com/MatheusBrazolin/ProjetoIntegrador" target="_blank">💻 GitHub</a>
+            <a href="#" target="_blank">🔗 Demo</a>
+            <a href="#" target="_blank">💻 GitHub</a>
           </div>
 
           <div class="descricao-projeto">
-
-            <p><strong>Objetivo:</strong> add texto</p>
-
-            <p><strong>Organização:</strong> </p>
-
-            <p><strong>Back-end:</strong> </p>
-
-            <p><strong>Testes e Deploy:</strong> </p>
-
-
-            <p><strong>Front-end:</strong> </p>
-
-            <p><strong>Funcionalidades:</strong> </p>
-
+            <p><strong>Objetivo:</strong> Em desenvolvimento.</p>
+            <p><strong>Tecnologias:</strong> JavaScript.</p>
           </div>
         </div>
+
       </div>
     </section>
-
 
     <!-- CONTATO -->
     <section id="contato" class="card secao">
       <h2>Contato</h2>
+
       <ul class="lista-contato">
         <li>🔗 <a href="https://www.linkedin.com/in/matheus-brazolin-70b57322b/" target="_blank">LinkedIn</a></li>
         <li>💻 <a href="https://github.com/MatheusBrazolin" target="_blank">GitHub</a></li>
-        <li>📧 <a>Email: Matheusbrazolin013@gmail.com</a></li>
+        <li>📧 <a href="mailto:Matheusbrazolin013@gmail.com">Matheusbrazolin013@gmail.com</a></li>
       </ul>
     </section>
 
