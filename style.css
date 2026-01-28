@@ -1,0 +1,150 @@
+/* ===== MELHORIA DE LEITURA DO TEXTO ===== */
+
+.card p {
+  margin-bottom: 14px;   /* espaço entre parágrafos */
+  line-height: 1.6;      /* melhora MUITO a leitura */
+}
+
+/* Limita largura do texto para não ficar “esticado” */
+.card {
+  max-width: 800px;
+}
+
+/* Dá um leve destaque no primeiro parágrafo */
+.card p:first-of-type {
+  font-weight: 500;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BODY */
+body {
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+}
+
+header nav {
+  margin-top: 15px;
+}
+
+/* MENU */
+.menu-link {
+  color: #9ca3af;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu-link:hover {
+  color: #6b7280;
+}
+
+.menu-link.ativo {
+  color: #111827;
+}
+
+/* LINKS */
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  margin-bottom: 12px;
+}
+
+/* SEÇÕES COM ANIMAÇÃO */
+.secao {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.secao.ativa {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* PROJETOS */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.projeto-card {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.projeto-card h3 {
+  margin-bottom: 8px;
+}
+
+.projeto-links a {
+  margin-right: 12px;
+  font-weight: bold;
+}
+
+/* CONTATO */
+.lista-contato {
+  list-style: none;
+}
+
+.lista-contato li {
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-top: 30px;
+}
+body {
+  background-color: #f4f6f8;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main.container {
+  flex: 1;
+}
