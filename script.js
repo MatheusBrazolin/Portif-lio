@@ -15,3 +15,19 @@ linksMenu.forEach(link => {
     document.getElementById(id).classList.add("ativa");
   });
 });
+const botoesLerMais = document.querySelectorAll(".btn-ler-mais");
+
+botoesLerMais.forEach(botao => {
+  botao.addEventListener("click", () => {
+    const card = botao.closest(".projeto-card");
+    const descricao = card.querySelector(".descricao-projeto");
+
+    descricao.classList.toggle("ativa");
+
+    if (descricao.classList.contains("ativa")) {
+      botao.textContent = "Ler menos";
+    } else {
+      botao.textContent = "Ler mais";
+    }
+  });
+});

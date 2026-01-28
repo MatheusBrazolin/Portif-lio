@@ -1,8 +1,10 @@
 /* ===== MELHORIA DE LEITURA DO TEXTO ===== */
 
 .card p {
-  margin-bottom: 14px;   /* espaço entre parágrafos */
-  line-height: 1.6;      /* melhora MUITO a leitura */
+  margin-bottom: 14px;
+  /* espaço entre parágrafos */
+  line-height: 1.6;
+  /* melhora MUITO a leitura */
 }
 
 /* Limita largura do texto para não ficar “esticado” */
@@ -78,7 +80,7 @@ a:hover {
   border-radius: 8px;
   padding: 20px;
   margin: 20px 0;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
@@ -99,28 +101,76 @@ a:hover {
   transform: translateY(0);
 }
 
-/* PROJETOS */
+/* =========================
+   PROJETOS
+========================= */
+
 .projetos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
 }
 
+/* Card do projeto (balão) */
 .projeto-card {
   background: #f9fafb;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.projeto-card h3 {
+/* Nome do projeto + botão */
+.projeto-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 8px;
+}
+
+/* Links do projeto */
+.projeto-links {
+  margin: 8px 0 14px;
 }
 
 .projeto-links a {
   margin-right: 12px;
   font-weight: bold;
 }
+
+/* Botão Ler mais */
+.btn-ler-mais {
+  background: #2563eb;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.btn-ler-mais:hover {
+  background: #1e40af;
+}
+
+
+/* Texto expandido */
+.descricao-projeto {
+  display: none;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.descricao-projeto p {
+  margin-bottom: 10px;
+  max-width: 700px;
+}
+
+.descricao-projeto.ativa {
+  display: block;
+}
+
 
 /* CONTATO */
 .lista-contato {
@@ -138,6 +188,7 @@ a:hover {
   color: #666;
   margin-top: 30px;
 }
+
 body {
   background-color: #f4f6f8;
   color: #333;
@@ -145,6 +196,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 main.container {
   flex: 1;
 }
