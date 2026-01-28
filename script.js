@@ -19,15 +19,24 @@ const botoesLerMais = document.querySelectorAll(".btn-ler-mais");
 
 botoesLerMais.forEach(botao => {
   botao.addEventListener("click", () => {
-    const card = botao.closest(".projeto-card");
-    const descricao = card.querySelector(".descricao-projeto");
+    const cardAtual = botao.closest(".projeto-card");
+    const descricaoAtual = cardAtual.querySelector(".descricao-projeto");
+    const estaAberto = descricaoAtual.classList.contains("ativa");
 
-    descricao.classList.toggle("ativa");
+    // Fecha todos os cards
+    document.querySelectorAll(".descricao-projeto").forEach(descricao => {
+      descricao.classList.remove("ativa");
+    });
 
-    if (descricao.classList.contains("ativa")) {
+    // Reseta texto de todos os botões
+    botoesLerMais.forEach(btn => {
+      btn.textContent = "Ler mais";
+    });
+
+    // Se não estava aberto, abre o clicado
+    if (!estaAberto) {
+      descricaoAtual.classList.add("ativa");
       botao.textContent = "Ler menos";
-    } else {
-      botao.textContent = "Ler mais";
     }
   });
 });
