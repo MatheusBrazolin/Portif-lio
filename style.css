@@ -148,10 +148,16 @@ img, svg { display: block; }
   flex-shrink: 0;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
 .nav-links {
   display: flex;
   gap: 0.125rem;
-  margin-left: auto;
 }
 
 .nav-link {
@@ -189,6 +195,36 @@ img, svg { display: block; }
   border-color: var(--accent);
   transform: scale(1.07);
 }
+
+/* ==============================================
+   MOBILE NAV TOGGLE (hambúrguer)
+============================================== */
+.nav-toggle-btn {
+  display: none;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: background var(--fast), border-color var(--fast), color var(--fast);
+}
+
+.nav-toggle-btn:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.nav-toggle-icon .bar { transition: transform var(--fast) var(--ease), opacity var(--fast) var(--ease); transform-origin: center; }
+
+.nav-toggle-btn[aria-expanded="true"] .bar-top    { transform: translateY(6px) rotate(45deg); }
+.nav-toggle-btn[aria-expanded="true"] .bar-mid    { opacity: 0; }
+.nav-toggle-btn[aria-expanded="true"] .bar-bottom { transform: translateY(-6px) rotate(-45deg); }
 
 /* ==============================================
    HERO
@@ -757,7 +793,33 @@ img, svg { display: block; }
 }
 
 @media (max-width: 560px) {
-  .nav-links         { display: none; }
+  .nav-toggle-btn    { display: flex; }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0.125rem;
+    padding: 0.5rem var(--pad) calc(var(--pad) * 0.75);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity var(--fast) var(--ease), transform var(--fast) var(--ease), visibility var(--fast);
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-link          { padding: 0.75rem 0.875rem; }
+
   .hero              { padding-top: 96px; min-height: auto; }
   .projects-grid     { grid-template-columns: 1fr; }
   .contact-socials   { flex-direction: column; width: 100%; }

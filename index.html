@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matheus Brazolin — Desenvolvedor de Software</title>
   <meta name="description" content="Portfólio de Matheus Brazolin, Desenvolvedor de Software Júnior com foco em back-end, APIs REST e pipelines de dados. Atualmente na OTM Invest — Grupo BTG Pactual." />
+  <link rel="canonical" href="https://matheus-brazolin-portfolio.vercel.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://matheus-brazolin-portfolio.vercel.app/" />
+  <meta property="og:title" content="Matheus Brazolin — Desenvolvedor de Software" />
+  <meta property="og:description" content="Desenvolvedor de Software Júnior com foco em back-end, APIs REST e pipelines de dados. Atualmente na OTM Invest — Grupo BTG Pactual." />
+  <meta property="og:image" content="https://matheus-brazolin-portfolio.vercel.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Matheus Brazolin — Desenvolvedor de Software" />
+  <meta name="twitter:description" content="Desenvolvedor de Software Júnior com foco em back-end, APIs REST e pipelines de dados. Atualmente na OTM Invest — Grupo BTG Pactual." />
+  <meta name="twitter:image" content="https://matheus-brazolin-portfolio.vercel.app/og-image.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -16,16 +34,27 @@
   <header class="nav-header">
     <div class="nav-inner">
       <a href="#inicio" class="nav-logo">MB<span class="accent">.</span></a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#sobre"    class="nav-link" data-section="sobre">Sobre</a></li>
-          <li><a href="#projetos" class="nav-link" data-section="projetos">Projetos</a></li>
-          <li><a href="#contato"  class="nav-link" data-section="contato">Contato</a></li>
-        </ul>
-      </nav>
-      <button id="toggle-tema" class="theme-btn" aria-label="Alternar tema">
-        <span id="tema-icon">🌙</span>
-      </button>
+      <div class="nav-right">
+        <nav>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#sobre"    class="nav-link" data-section="sobre">Sobre</a></li>
+            <li><a href="#projetos" class="nav-link" data-section="projetos">Projetos</a></li>
+            <li><a href="#contato"  class="nav-link" data-section="contato">Contato</a></li>
+          </ul>
+        </nav>
+        <button id="toggle-tema" class="theme-btn" aria-label="Alternar tema">
+          <span id="tema-icon">🌙</span>
+        </button>
+        <button id="nav-toggle" class="nav-toggle-btn" aria-label="Abrir menu"
+                aria-expanded="false" aria-controls="nav-links">
+          <svg class="nav-toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line class="bar bar-top"    x1="3" y1="6"  x2="21" y2="6"/>
+            <line class="bar bar-mid"    x1="3" y1="12" x2="21" y2="12"/>
+            <line class="bar bar-bottom" x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -45,12 +74,21 @@
           </p>
           <p class="hero-bio reveal delay-3">
             Back-end, pipelines de dados e APIs REST em produção real. Atualmente na
-            <span class="accent">OTM Invest — Grupo BTG Pactual</span>, construindo
-            features end-to-end com Python, PostgreSQL, Docker e Redis.
+            <span class="accent">OTM Invest — Grupo BTG Pactual</span>, orquestrando
+            workflows com Python, Prefect, PostgreSQL e Redis.
           </p>
           <div class="hero-cta reveal delay-4">
             <a href="#projetos" class="btn btn-primary">Ver projetos</a>
             <a href="#contato"  class="btn btn-ghost">Entrar em contato</a>
+            <a href="assets/curriculo-matheus-brazolin.pdf" download class="btn btn-ghost">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7,10 12,15 17,10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Baixar currículo
+            </a>
           </div>
         </div>
       </div>
@@ -65,25 +103,28 @@
         <div class="about-layout">
           <div class="about-body reveal delay-1">
             <p>
-              Desenvolvedor de Software com foco em <strong>Back-end, APIs REST e arquitetura de
-              dados</strong>, atuando em ambiente de produção real com Python, PostgreSQL, Redis,
-              Docker e integração de sistemas.
+              Desenvolvedor de Software com foco em <strong>Back-end, arquitetura de dados e
+              APIs REST</strong>, atuando em ambiente de produção real com Python, PostgreSQL,
+              Redis, Docker e orquestração de pipelines com Prefect.
             </p>
             <p>
-              Experiência no desenvolvimento de aplicações end-to-end, desde modelagem de banco de
-              dados e construção de APIs até automação de workflows, pipelines de dados e deploy de
-              serviços. Atuação prática com desenvolvimento orientado a performance, organização de
-              código, versionamento com Git e boas práticas de arquitetura.
+              Experiência no ciclo completo de desenvolvimento — da modelagem do banco de dados
+              à API, passando por integração com serviços externos e deploy — com autonomia sobre
+              entregas end-to-end. Trabalho com bancos relacionais e de séries temporais
+              (PostgreSQL, TimescaleDB) em ambiente distribuído, construindo workflows
+              automatizados para ingestão e transformação de dados.
             </p>
             <p>
-              Também possuo experiência corporativa consolidada na <strong>Porto Seguro</strong>,
-              o que fortaleceu minhas habilidades analíticas, responsabilidade com processos,
-              comunicação entre áreas e maturidade profissional em ambientes de alta demanda.
+              Antes de migrar para tecnologia, construí quatro anos de trajetória na
+              <strong>Porto Seguro</strong>, passando por Licitações e Sinistro Vida — de
+              Jovem Aprendiz a Analista Júnior. Essa vivência me deu disciplina com prazos
+              regulatórios, precisão analítica e comunicação entre áreas, algo que carrego para
+              como estruturo entregas técnicas hoje.
             </p>
             <p>
               Atualmente curso <strong>Pós-Graduação em Full Stack Development pela FIAP</strong>
               e sigo aprofundando conhecimentos em engenharia de software, arquitetura back-end e
-              desenvolvimento escalável.
+              sistemas distribuídos.
             </p>
           </div>
           <div class="about-stats reveal delay-2">
@@ -96,7 +137,7 @@
               <span class="stat-l">Anos de estudo</span>
             </div>
             <div class="stat">
-              <span class="stat-n">2+</span>
+              <span class="stat-n">3+</span>
               <span class="stat-l">Projetos publicados</span>
             </div>
           </div>
@@ -166,18 +207,18 @@
             </button>
           </article>
 
-          <!-- VendasApp -->
+          <!-- NexSales -->
           <article class="project-card reveal delay-2">
             <div class="project-top">
               <div class="project-icon" aria-hidden="true">🛒</div>
               <div class="project-actions">
-                <a href="https://github.com/MatheusBrazolin/vendas-app"
+                <a href="https://github.com/MatheusBrazolin/NexSales"
                    target="_blank" rel="noopener" class="project-btn" aria-label="Ver código no GitHub">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
                   </svg>
                 </a>
-                <a href="https://vendas-app-topaz.vercel.app"
+                <a href="https://nexsales-pdv.vercel.app"
                    target="_blank" rel="noopener" class="project-btn" aria-label="Ver demo ao vivo">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -188,10 +229,10 @@
                 </a>
               </div>
             </div>
-            <h3 class="project-title">VendasApp</h3>
+            <h3 class="project-title">NexSales</h3>
             <p class="project-desc">
-              PDV para pequenos comércios instalável como PWA — leitor de código de barras,
-              baixa automática de estoque, controle de papéis e funcionamento
+              PDV e gestão de vendas para pequenos comércios instalável como PWA — leitor de
+              código de barras, controle de estoque, fiado e funcionamento
               <strong>offline-first</strong> com sincronização ao reconectar.
             </p>
             <div class="project-tags">
@@ -203,13 +244,16 @@
               <span class="tag">Electron</span>
               <span class="tag">Tailwind CSS</span>
             </div>
-            <div class="project-expand" id="exp-vendaapp">
+            <div class="project-expand" id="exp-nexsales">
               <div class="project-expand-inner">
                 <p>🔧 <strong>Backend:</strong> Next.js App Router com Server Actions, Supabase
                    (PostgreSQL + Auth + RLS), validação com Zod e relatório diário por email via
                    Vercel Cron + SMTP.</p>
-                <p>🎨 <strong>Frontend:</strong> Interface responsiva com Base UI + Tailwind v4,
+                <p>🎨 <strong>Frontend:</strong> Interface responsiva com Tailwind v4 + shadcn/ui,
                    dashboard de KPIs, gráficos Recharts e sidebar adaptável desktop/mobile.</p>
+                <p>💳 <strong>PDV e fiado:</strong> busca por nome ou código de barras (leitor USB
+                   ou câmera), múltiplos métodos de pagamento incluindo fiado com saldo devedor
+                   por cliente, e dois papéis de acesso (Admin / Funcionário).</p>
                 <p>📴 <strong>Offline-first:</strong> Catálogo cacheado em IndexedDB (Dexie),
                    fila de vendas local com replay idempotente via <code>client_uuid</code> e
                    recibo térmico 80mm imprimível mesmo sem conexão.</p>
@@ -217,7 +261,65 @@
                    funciona como PDV fixo sem depender do navegador.</p>
               </div>
             </div>
-            <button class="toggle-btn" data-target="exp-vendaapp" aria-expanded="false">
+            <button class="toggle-btn" data-target="exp-nexsales" aria-expanded="false">
+              <span class="toggle-label">Ver detalhes</span>
+              <svg class="toggle-chevron" width="14" height="14" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+          </article>
+
+          <!-- KitManager -->
+          <article class="project-card reveal delay-3">
+            <div class="project-top">
+              <div class="project-icon" aria-hidden="true">🏠</div>
+              <div class="project-actions">
+                <a href="https://github.com/MatheusBrazolin/kitnet-manager"
+                   target="_blank" rel="noopener" class="project-btn" aria-label="Ver código no GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="https://kitnet-manager-zeta.vercel.app"
+                   target="_blank" rel="noopener" class="project-btn" aria-label="Ver demo ao vivo">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15,3 21,3 21,9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">KitManager</h3>
+            <p class="project-desc">
+              SaaS de gestão de kitnets — cadastro de imóveis e moradores, controle de
+              pagamentos e despesas, com dashboard geral e planos por usuário (FREE / PRO).
+            </p>
+            <div class="project-tags">
+              <span class="tag">NestJS</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">React</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Prisma</span>
+              <span class="tag">JWT</span>
+              <span class="tag">Vercel</span>
+            </div>
+            <div class="project-expand" id="exp-kitmanager">
+              <div class="project-expand-inner">
+                <p>🔧 <strong>Backend:</strong> NestJS + TypeScript, PostgreSQL via Prisma ORM,
+                   autenticação JWT (bcrypt + passport-jwt) e isolamento de dados por conta.</p>
+                <p>🎨 <strong>Frontend:</strong> React 19 + TypeScript com Vite, dashboard com
+                   ocupação, valor mensal e próximos vencimentos.</p>
+                <p>📋 <strong>Funcionalidades:</strong> imóveis, kitnets (com status vaga/ocupada
+                   automático), moradores, pagamentos mensais, gastos por kitnet e convite de
+                   membros da equipe (gerente / visualizador).</p>
+                <p>☁️ <strong>Deploy:</strong> frontend e backend no mesmo projeto Vercel
+                   (frontend estático + backend serverless), banco PostgreSQL na nuvem.</p>
+              </div>
+            </div>
+            <button class="toggle-btn" data-target="exp-kitmanager" aria-expanded="false">
               <span class="toggle-label">Ver detalhes</span>
               <svg class="toggle-chevron" width="14" height="14" viewBox="0 0 24 24"
                    fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
@@ -227,7 +329,7 @@
           </article>
 
           <!-- Em desenvolvimento -->
-          <article class="project-card project-wip reveal delay-3">
+          <article class="project-card project-wip reveal delay-4">
             <div class="project-top">
               <div class="project-icon" aria-hidden="true">🚧</div>
             </div>

@@ -18,6 +18,29 @@
 
   themeBtn.addEventListener('click', () => applyTheme(theme === 'dark' ? 'light' : 'dark'));
 
+  // ─── Mobile nav toggle (hambúrguer) ────────────────────────────────────────────
+  const navToggle = document.getElementById('nav-toggle');
+  const navPanel  = document.getElementById('nav-links');
+
+  function setNavOpen(open) {
+    navPanel.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  }
+
+  navToggle.addEventListener('click', () => setNavOpen(!navPanel.classList.contains('open')));
+  navPanel.addEventListener('click', e => { if (e.target.closest('.nav-link')) setNavOpen(false); });
+
+  document.addEventListener('click', e => {
+    if (navPanel.classList.contains('open') && !navPanel.contains(e.target) && !navToggle.contains(e.target)) {
+      setNavOpen(false);
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && navPanel.classList.contains('open')) setNavOpen(false);
+  });
+
   // ─── Active nav link on scroll ────────────────────────────────────────────────
   const navLinks = document.querySelectorAll('.nav-link');
 
